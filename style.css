@@ -1,0 +1,63 @@
+:root {
+  --page-title-color: #0f172a;
+  --button-bg: #0056b3;
+  --button-color: #ffffff;
+  --button-disabled-bg: #cccccc;
+  --completion-color: #16a34a;
+  --error-color: #dc2626;
+}
+
+/* ページタイトル */
+.page-title {
+  color: var(--page-title-color);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 5vh;     
+  line-height: 1.1;
+}
+
+/* ボタン */
+button {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 10px;
+  font-size: 3vh;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  background-color: var(--button-bg);
+  color: var(--button-color);
+}
+
+button:disabled {
+  background-color: var(--button-disabled-bg);
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+}
+
+/* 完了ページ */
+#completion-page {
+  display: none;
+  height: 100vh;
+  background-color: #f9f9f9;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  color: var(--completion-color);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* エラーメッセージ */
+#error-message {
+  display: none;
+  color: var(--error-color);
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
