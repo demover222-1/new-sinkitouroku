@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お客様情報登録フォーム</title>
+<link rel="stylesheet" href="style.css">
+  
 <style>
 body {
   margin: 0;
@@ -76,10 +78,9 @@ form {
     box-sizing: border-box;
   }
   #error-message { display: none; color: #dc2626; text-align: center; margin-top: 20px; font-weight: bold; }
-
-
-
+  
 </style>
+  
 </head>
 <body>
 
@@ -117,6 +118,20 @@ window.onload = function() {
   const params = new URLSearchParams(window.location.search);
   const userId = params.get("userId");
   const webappurl = params.get("webappurl");
+  
+    // 色のパラメータを取得
+  const pageTitleColor = params.get("pageTitleColor");
+  const buttonBg = params.get("buttonBg");
+  const buttonColor = params.get("buttonColor");
+  const completionColor = params.get("completionColor");
+  const errorColor = params.get("errorColor");
+
+  // CSS変数に反映
+  if(pageTitleColor) document.documentElement.style.setProperty('--page-title-color', pageTitleColor);
+  if(buttonBg) document.documentElement.style.setProperty('--button-bg', buttonBg);
+  if(buttonColor) document.documentElement.style.setProperty('--button-color', buttonColor);
+  if(completionColor) document.documentElement.style.setProperty('--completion-color', completionColor);
+  if(errorColor) document.documentElement.style.setProperty('--error-color', errorColor);
 
 //===============送信に関して=================================================================================
 form.addEventListener("submit", async (e) => {
@@ -162,6 +177,7 @@ form.addEventListener("submit", async (e) => {
 </script>
 </body>
 </html>
+
 
 
 
